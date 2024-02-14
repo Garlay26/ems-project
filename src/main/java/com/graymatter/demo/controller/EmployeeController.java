@@ -42,7 +42,6 @@ public class EmployeeController {
 	public String viewEmployee(@RequestParam int id, Model model) {
 		
 		Employee employee = service.getEmployeeById(id);
-		service.deleteEmployeeById(id);
 		model.addAttribute("employee", employee);		
 		return "employee/view_employee";
 	}
