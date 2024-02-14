@@ -30,7 +30,6 @@ public class DepartmentController {
 	public String viewDepartment(@RequestParam int id, Model model) {
 		
 		Department department = service.getDepartmentById(id);
-		service.deleteDepartmentById(id);
 		model.addAttribute("department", department);
 		return "employee/view_department";
 	}

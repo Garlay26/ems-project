@@ -2,7 +2,10 @@ package com.graymatter.demo.controller;
 
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
+import com.graymatter.demo.model.BubbleSort;
+import com.graymatter.demo.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +26,10 @@ public class EmployeeAdminController {
 	
 	@GetMapping("/admin/employee-datatable")
 	public String employeeDataTable(Model model) {
-		model.addAttribute("listEmployees",employeeService.getAllEmployees());
+		List<Employee> employees = employeeService.getAllEmployees();
+		BubbleSort.sortEmployeesById(employees);
+		model.addAttribute("listEmployees", employees);
+
 		return "employee/employee_table_list";
 	}
 	
