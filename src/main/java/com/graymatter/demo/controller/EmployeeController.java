@@ -1,11 +1,13 @@
 package com.graymatter.demo.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.graymatter.demo.model.BubbleSort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -42,11 +44,11 @@ public class EmployeeController {
 	public String viewEmployee(@RequestParam int id, Model model) {
 		
 		Employee employee = service.getEmployeeById(id);
-		service.deleteEmployeeById(id);
+
 		model.addAttribute("employee", employee);		
 		return "employee/view_employee";
 	}
-	
+
 	
 	@RequestMapping("/admin/deleteEmployee")
 	public String deleteEmployee(@RequestParam int id) {
