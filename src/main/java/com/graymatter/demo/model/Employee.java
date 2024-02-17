@@ -52,9 +52,14 @@ public class Employee {
 		
 	@Column(name = "password")
 	private String password;
-	
-	
-	public int getId() {
+
+	@Column(name = "rating", columnDefinition = "int default 0")
+	private int rating;
+
+	public void Employee(String string, double mean) {
+        
+    }
+    public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -139,7 +144,14 @@ public class Employee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
