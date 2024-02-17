@@ -53,12 +53,9 @@ public class Employee {
 	@Column(name = "password")
 	private String password;
 
-	@Column(name = "rating", columnDefinition = "int default 0")
-	private int rating;
-
-	public void Employee(String string, double mean) {
-        
-    }
+	@Column(name = "rating", columnDefinition = "Integer default 0")
+	private Integer rating;
+    
     public int getId() {
 		return id;
 	}
@@ -145,10 +142,11 @@ public class Employee {
 		this.password = password;
 	}
 
-	public int getRating() {
+	public Integer getRating() {
 		return rating;
 	}
-	public void setRating(int rating) {
+
+	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
 

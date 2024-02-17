@@ -9,8 +9,6 @@ import com.graymatter.demo.model.Rating;
 import com.graymatter.demo.repo.EmployeeRepository;
 import com.graymatter.demo.repo.RatingRepository;
 
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
-
 @Service
 public class RatingServiceImpl implements RatingService {
 	
