@@ -55,8 +55,9 @@ public class Employee {
 
 	@Column(name = "rating", columnDefinition = "Integer default 0")
 	private Integer rating;
-    
-    public int getId() {
+	private int cluster; // Adding a cluster field
+
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -149,6 +150,14 @@ public class Employee {
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
+
+	public int getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(int cluster) {
+        this.cluster = cluster;
+    }
 
 	@Override
 	public String toString() {

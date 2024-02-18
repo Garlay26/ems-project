@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%> 
 	<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 	<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-		     
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Employee Admin - Add Department</title>
+  <title>Employee Admin - Employee List</title>
 
   <!-- Custom fonts for this template -->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,7 +27,7 @@
 
   <!-- Custom styles for this page -->
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+  
 </head>
 
 <body id="page-top">
@@ -67,7 +66,7 @@
 
 
       <!-- Nav Item -Employees List -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
@@ -98,7 +97,7 @@
                   </li>
             
                   <!-- Nav Item -Add Department -->
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="/admin/employee-department-add">
                       <i class="fas fa fa-plus"></i>
                       <span>Add Department</span></a>
@@ -217,7 +216,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class='fas fa-download fa-fw'></i>
               </a>
-
+              
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
@@ -260,7 +259,7 @@
               </div>
             </li>
 
-          
+
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
@@ -269,7 +268,7 @@
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                     <security:authorize access="isAuthenticated()">
 					    <security:authentication property="name" />
-					</security:authorize>                
+					</security:authorize>
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -281,7 +280,7 @@
                 </a>
                 <form action="logout" method="post">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout">                
+                <a class="dropdown-item" href="/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -298,108 +297,47 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Add Department</h1>
-          <br>
+          <h1 class="h3 mb-2 text-gray-800">KMeans Clustering Result</h1>
 
-          <form class="was-validated" action="department" method="POST">
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationTooltip01">Department Name</label>
-                <select class="custom-select" id="department_add_name" name="departmentName" required>
-                  <option value="">Choose...</option>
-                  <option value ="Marketing">Marketing</option>
-                  <option value="Accounting and Finance">Accounting and Finance</option>
-                  <option value="Human Resource Management">Human Resource Management</option>
-                  <option value="Research and Development">Research and Development</option>
-                </select>
-                <div class="invalid-tooltip">
-                  Please Enter Correct Department Name.
-                </div>
-                <div class="valid-tooltip">
-                  Looks good!
-                </div>
-              </div>
-
-              
-              <div class="col-md-6 mb-3">
-                <label for="validationTooltip02">Department Phone No</label>
-                <input type="text" class="form-control" id="department_add_phoneNo" name="dphoneNo" placeholder="Department Phone Number" required>
-                <div class="invalid-tooltip">
-                  Please Enter Department Phone No.
-                </div>
-                <div class="valid-tooltip">
-                  Looks good!
-                </div>
-              </div>
-     
+          <!-- DataTales Employee List -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">All Employees</h6>
             </div>
-            <div class="form-row">
-
-              <div class="col-md-6 mb-3 mt-4">
-                <label for="validationTooltipUsername">Department Email</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                  </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_add_email" name="departmentEmail" placeholder="Department Email" aria-describedby="validationTooltipUsernamePrepend" required>
-                  <div class="invalid-tooltip">
-                    Please Enter Department Email.
-                  </div>
-                  <div class="valid-tooltip">
-                    Looks good!
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-3 mt-4">
-                <label for="validationTooltipDPBranch">Branch</label>
-                  <select class="custom-select" id="department_add_branch" name="department_branch" required>
-                    <option value="">Choose...</option>
-                    <option value ="Kandy">Kandy</option>
-                    <option value="Colombo">Colombo</option>
-                    <option value="Kurunagala">Kurunagala</option>
-                    <option value="Matara">Matara</option>
-                  </select>
-                    <div class="invalid-tooltip">
-                      Please Select Correct Branch.
-                    </div>
-                    <div class="valid-tooltip">
-                      Looks good!
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="form-row">
-              <div class="col-md-12 mb-3 mt-4">
-                <label for="validationTooltip03">Address</label>
-                <input type="text" class="form-control" id="department_add_address" name="department_address" placeholder="Department Address" required>
-                <div class="invalid-tooltip">
-                  Please Provide a Valid Department Address.
-                </div>
-                <div class="valid-tooltip">
-                  Looks good!
-                </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Email</th>
+                      <th>Rating</th>
+                      <th>Clusters</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Email</th>
+                        <th>Rating</th>
+                        <th>Clusters</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+						<c:forEach var="employee" items="${clusteredEmployees}">
+				
+							<tr>
+								<td>${employee.firstName}</td>
+								<td>${employee.email}</td>
+								<td>${employee.rating}</td>
+								<td>${employee.cluster}</td>	  
+                  	  </tr>
+                  	  </c:forEach>       
+                  </tbody>
+                </table>
               </div>
             </div>
-
-            <div class="form-row">
-              <div class="col-md-12 mb-3 mt-4 mb-4">
-                <label for="validationTooltip03">Department Entention No</label>
-                <input type="text" class="form-control" id="department_add_ententionNo" name="department_ententionNo" placeholder="Department Entention No" required>
-                <div class="invalid-tooltip">
-                  Please Provide a Valid Department Entention No.
-                </div>
-                <div class="valid-tooltip">
-                  Looks good!
-                </div>
-              </div>
-            </div>
-
-            <button class="btn btn-primary mt-4 mb-4" type="submit">Add Department</button>
-            <button class="btn btn-secondary mt-4 mb-4" type="submit">Cancel</button>
-          </form>
-                
+          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -463,6 +401,6 @@
 
   <!-- Page level custom scripts -->
   <script src="../static/admin/js/demo/datatables-demo.js"></script>
-
+  
 </body>
 </html>

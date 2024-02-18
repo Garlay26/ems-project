@@ -1,16 +1,19 @@
 package com.graymatter.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.graymatter.demo.model.Employee;
 import com.graymatter.demo.model.Rating;
 import com.graymatter.demo.service.EmployeeServiceImpl;
 import com.graymatter.demo.service.KMeansService;
 import com.graymatter.demo.service.RatingServiceImpl;
+import java.util.List;
 
 @Controller
 public class RatingController {
@@ -46,20 +49,12 @@ public class RatingController {
 	}
 
     @GetMapping("/admin/employee-rating-group")
-    public java.util.List<java.util.List<Employee>> performKMeansClustering() {
-        // Retrieve employees from your data source (e.g., database)
-        java.util.List<Employee> employees = getEmployeesFromDataSource();
-
-        // Perform K-means clustering
-        return kMeansService.kMeansClustering(employees, 3);
-    }
-
-     private java.util.List<Employee> getEmployeesFromDataSource() {
-        // Implement logic to retrieve employees from your data source (e.g., database)
-        // For simplicity, let's create some dummy employees
-        java.util.List<Employee> employees = employeeServiceImpl.getAllEmployees();
-        // Add more employees as needed
-        return employees;
+    public String clusterEmployees(Model model) {
+        List<Employee> employees = employeeServiceImpl.getAllEmployees();
+        int k = 3;
+        List<Employee> clusteredEmployees = kMeansService.clusterEmployees(employees, k);
+        model.addAttribute("clusteredEmployees", clusteredEmployees);
+        return "rating/clusters";
     }
 
 }
