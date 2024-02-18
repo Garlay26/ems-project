@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../static/admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../static/admin/css/sb-admin-2.css" rel="stylesheet">
 
   <!-- Custom styles for this page -->
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -165,10 +165,14 @@
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
-      <div id="content">
+       <div id="content" style="
+    background-color: #ace8ac;
+">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="
+    background-color: #bbf0ba !important;
+">
 
           <!-- Sidebar Toggle (Topbar) -->
           <form class="form-inline">
@@ -178,16 +182,7 @@
           </form>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+           
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -213,52 +208,7 @@
             </li>
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class='fas fa-download fa-fw'></i>
-              </a>
-              
-              <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Get Reports
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/pdf">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">PDF Format</div>
-                    <span class="font-weight-bold">A new month Employee report(PDF) is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/html">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class='fas fa-file-code text-white' style='font-size:14px' ></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">HTML Format</div>
-                    A new month Employee report(HTML) is ready to download!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
+             
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -270,7 +220,7 @@
 					    <security:authentication property="name" />
 					</security:authorize>                
                 </span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <img class="img-profile rounded-circle" src="https://cdn2.iconfinder.com/data/icons/web-solid/32/user-512.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -372,7 +322,9 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white">
+      <footer class="sticky-footer bg-white" style="
+    background-color: #bbf0ba !important;
+">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
              

@@ -14,7 +14,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="../static/admin/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="../static/admin/css/sb-admin-2.css" rel="stylesheet">
 
 <!-- Custom styles for this page -->
 <link
@@ -116,7 +116,9 @@ input[type="text"] {
 		<div id="content-wrapper" class="d-flex flex-column">
 
 			<!-- Main Content -->
-			<div id="content">
+			 <div id="content" style="
+    background-color: #ace8ac;
+">
 
 				<!-- Topbar -->
 				<nav
@@ -231,7 +233,7 @@ input[type="text"] {
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie
 									Luna</span> <img class="img-profile rounded-circle"
-								src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+								src="https://cdn2.iconfinder.com/data/icons/web-solid/32/user-512.png">
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -325,7 +327,9 @@ input[type="text"] {
 				<!-- End of Main Content -->
 
 				<!-- Footer -->
-				<footer class="sticky-footer bg-white">
+				<footer class="sticky-footer bg-white" style="
+    background-color: #bbf0ba !important;
+">
 					<div class="container my-auto">
 						<div class="copyright text-center my-auto">
 							 
